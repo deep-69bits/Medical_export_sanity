@@ -1,22 +1,40 @@
 export default{
-    name: 'product',
+    name: 'shop',
     type: 'document',
-    title: 'Product',
+    title: 'Shop',
     fields:[
         {
-            name: 'productimage',
-            type: 'image',
-            title: 'Product Image'
-        },
-        {
-            name: 'name',
+            name: 'title',
             type: 'string',
-            title: 'Name'
+            title: 'Title'
         },
         {
             name: 'content',
-            type: 'string',
-            title: 'Content'
+            type: 'array',
+            title: 'Content',
+            of: [
+                {
+                  type: 'block'
+                },
+                {
+                  type: 'image',
+                  fields: [
+                    {
+                      type: 'text',
+                      name: 'alt',
+                      title: 'Alternative text',
+                      description: `Some of your visitors cannot see images, 
+                        be they blind, color-blind, low-sighted; 
+                        alternative text is of great help for those 
+                        people that can rely on it to have a good idea of 
+                        what\'s on your page.`,
+                      options: {
+                        isHighlighted: true
+                      }
+                    }
+                  ]
+                }
+              ]
         },
     ]
 }
