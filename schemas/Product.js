@@ -9,6 +9,13 @@ export default{
             title: 'Product Image'
         },
         {
+            name: 'moreimages',
+            type: 'array',
+            title: 'More Images',
+            type: 'array',
+            of: [{type: 'image'}],
+        },
+        {
             name: 'name',
             type: 'string',
             title: 'Name'
@@ -31,6 +38,15 @@ export default{
                 weak: true,
                 to: [{type: 'catergory'}],
                 description: 'Add the Category'
-        }
+        },
+        {
+            
+            name: 'subcat',
+            title: 'Sub Category',
+            type: 'reference',
+            weak: true,
+            to: [{type: 'subcatergory'}],
+            description: 'Add the Sub Category'
+       }
     ]
 }
